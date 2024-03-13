@@ -1,4 +1,4 @@
-package com.example.hydrationappcompose.ui.theme
+package com.example.hydrationappcompose.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -22,7 +22,6 @@ fun HydrationAppComposeTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
         content = content
     )
 }
