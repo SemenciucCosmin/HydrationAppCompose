@@ -9,6 +9,10 @@
     <!--  TODAY ROUTE  -->
     <string name="lbl_today_route_title">Today\'s Progress</string>
     <string name="lbl_today_route_message">Happy you\'re back to track your healthy habit of staying hydrated.</string>
+    <string name="lbl_unit_formatted_ml">%s ml</string>
+    <string name="lbl_unit_formatted_oz">%s oz</string>
+    <string name="lbl_percentage_formatted">%s%%</string>
+    <string name="lbl_goal_message_formatted">of %s %s Goal</string>
 
     <!--  HISTORY ROUTE  -->
     <string name="lbl_history_route_title">History</string>
