@@ -40,7 +40,11 @@ fun HydrationApp() {
                 HydrationTopAppBar(
                     title = stringResource(currentDestination.stringRes),
                     showActionIcon = isMainDestination,
-                    showNavigationIcon = !isMainDestination
+                    showNavigationIcon = !isMainDestination,
+                    onNavigationIconClick = navController::popBackStack,
+                    onActionIconClick = {
+                        navController.navigate(NavigationDestination.Settings.route)
+                    }
                 )
             },
             bottomBar = { if (isMainDestination) BottomNavigationBar(navController = navController) }
