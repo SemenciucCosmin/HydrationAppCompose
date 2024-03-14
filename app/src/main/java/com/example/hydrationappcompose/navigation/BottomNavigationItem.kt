@@ -12,12 +12,12 @@ data class BottomNavigationItem(
 
 val bottomNavigationItems = listOf(
     BottomNavigationItem(
-        route = NavigationDestination.Today.route,
+        route = NavDestination.Today.route,
         stringRes = R.string.lbl_today,
         drawableRes = R.drawable.ic_today
     ),
     BottomNavigationItem(
-        route = NavigationDestination.History.route,
+        route = NavDestination.History.route,
         stringRes = R.string.lbl_history,
         drawableRes = R.drawable.ic_history
     )

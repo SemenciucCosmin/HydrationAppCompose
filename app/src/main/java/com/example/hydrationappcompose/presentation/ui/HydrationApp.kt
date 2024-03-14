@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
 import com.example.hydrationappcompose.navigation.BottomNavigationBar
 import com.example.hydrationappcompose.navigation.LocalNavController
-import com.example.hydrationappcompose.navigation.NavigationDestination
+import com.example.hydrationappcompose.navigation.NavDestination
 import com.example.hydrationappcompose.navigation.NavigationGraph
 import com.example.hydrationappcompose.navigation.bottomNavigationItems
 import com.example.hydrationappcompose.presentation.ui.components.HydrationTopAppBar
@@ -23,13 +23,13 @@ import com.example.hydrationappcompose.presentation.ui.components.HydrationTopAp
 fun HydrationApp() {
     val navController = rememberNavController()
     var currentDestination by remember {
-        mutableStateOf<NavigationDestination>(NavigationDestination.Today)
+        mutableStateOf<NavDestination>(NavDestination.Today)
     }
     val isMainDestination = currentDestination.route in bottomNavigationItems.map { it.route }
 
     navController.addOnDestinationChangedListener { _, destination, _ ->
         destination.route?.let {
-            currentDestination = NavigationDestination.getDestinationByRoute(it)
+            currentDestination = NavDestination.getDestinationByRoute(it)
         }
     }
 
@@ -42,9 +42,7 @@ fun HydrationApp() {
                     showActionIcon = isMainDestination,
                     showNavigationIcon = !isMainDestination,
                     onNavigationIconClick = navController::popBackStack,
-                    onActionIconClick = {
-                        navController.navigate(NavigationDestination.Settings.route)
-                    }
+                    onActionIconClick = { navController.navigate(NavDestination.Settings.route) }
                 )
             },
             bottomBar = { if (isMainDestination) BottomNavigationBar(navController = navController) }

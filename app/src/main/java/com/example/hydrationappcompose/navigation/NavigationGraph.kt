@@ -19,16 +19,16 @@ fun NavigationGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = NavigationDestination.Today.route,
+        startDestination = NavDestination.Today.route,
         modifier = modifier
     ) {
-        composable(NavigationDestination.Today.route) { TodayRoute() }
-        composable(NavigationDestination.History.route) { HistoryRoute() }
-        composable(NavigationDestination.Settings.route) { SettingsRoute() }
-        composable(NavigationDestination.Units.route) { UnitsRoute() }
-        composable(NavigationDestination.DailyGoal.route) { ContainerRoute(Container.DAILY_GOAL) }
-        composable(NavigationDestination.Container1.route) { ContainerRoute(Container.CONTAINER_1) }
-        composable(NavigationDestination.Container2.route) { ContainerRoute(Container.CONTAINER_2) }
-        composable(NavigationDestination.Container3.route) { ContainerRoute(Container.CONTAINER_3) }
+        composable(NavDestination.Today.route) { TodayRoute() }
+        composable(NavDestination.History.route) { HistoryRoute() }
+        composable(NavDestination.Settings.route) { SettingsRoute() }
+        composable(NavDestination.Units.route) { UnitsRoute() }
+        composable(NavDestination.DailyGoal.route) { ContainerRoute(Container.DAILY_GOAL) }
+        composable(NavDestination.Container1.route) { ContainerRoute(Container.CONTAINER_1) }
+        composable(NavDestination.Container2.route) { ContainerRoute(Container.CONTAINER_2) }
+        composable(NavDestination.Container3.route) { ContainerRoute(Container.CONTAINER_3) }
     }
 }

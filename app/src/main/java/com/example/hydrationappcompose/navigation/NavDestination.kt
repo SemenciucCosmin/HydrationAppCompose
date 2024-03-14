@@ -3,43 +3,43 @@ package com.example.hydrationappcompose.navigation
 import androidx.annotation.StringRes
 import com.example.hydrationappcompose.R
 
-sealed class NavigationDestination(val route: String, @StringRes val stringRes: Int) {
-    data object Today : NavigationDestination(
+sealed class NavDestination(val route: String, @StringRes val stringRes: Int) {
+    data object Today : NavDestination(
         route = "today_route",
         stringRes = R.string.lbl_today_route_title
     )
 
-    data object History : NavigationDestination(
+    data object History : NavDestination(
         route = "history_route",
         stringRes = R.string.lbl_history_route_title
     )
 
-    data object Settings : NavigationDestination(
+    data object Settings : NavDestination(
         route = "settings_route",
         stringRes = R.string.lbl_settings_route_title
     )
 
-    data object Units : NavigationDestination(
+    data object Units : NavDestination(
         route = "units_route",
         stringRes = R.string.lbl_units_route_title
     )
 
-    data object DailyGoal : NavigationDestination(
+    data object DailyGoal : NavDestination(
         route = "daily_goal_route",
         stringRes = R.string.lbl_daily_goal
     )
 
-    data object Container1 : NavigationDestination(
+    data object Container1 : NavDestination(
         route = "container_1_route",
         stringRes = R.string.lbl_container_1
     )
 
-    data object Container2 : NavigationDestination(
+    data object Container2 : NavDestination(
         route = "container_2_route",
         stringRes = R.string.lbl_container_2
     )
 
-    data object Container3 : NavigationDestination(
+    data object Container3 : NavDestination(
         route = "container_3_route",
         stringRes = R.string.lbl_container_3
     )

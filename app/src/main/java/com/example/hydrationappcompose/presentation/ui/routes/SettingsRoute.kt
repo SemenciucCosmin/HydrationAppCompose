@@ -16,11 +16,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hydrationappcompose.R
+import com.example.hydrationappcompose.navigation.LocalNavController
+import com.example.hydrationappcompose.navigation.NavDestination
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 import com.example.hydrationappcompose.presentation.ui.components.ListItemButton
 
 @Composable
 fun SettingsRoute() {
+    val navController = LocalNavController.current
+
     Column {
         Spacer(modifier = Modifier.height(40.dp))
 
@@ -28,7 +32,7 @@ fun SettingsRoute() {
 
         ListItemButton(
             title = stringResource(R.string.lbl_units_route_title),
-            onClick = { },
+            onClick = { navController.navigate(NavDestination.Units.route) },
             primaryTrailingText = ""
         )
 
@@ -36,7 +40,7 @@ fun SettingsRoute() {
 
         ListItemButton(
             title = stringResource(R.string.lbl_daily_goal),
-            onClick = { },
+            onClick = { navController.navigate(NavDestination.DailyGoal.route) },
             primaryTrailingText = ""
         )
 
@@ -54,7 +58,7 @@ fun SettingsRoute() {
 
         ListItemButton(
             title = stringResource(R.string.lbl_container_1),
-            onClick = { },
+            onClick = { navController.navigate(NavDestination.Container1.route) },
             primaryTrailingText = ""
         )
 
@@ -62,7 +66,7 @@ fun SettingsRoute() {
 
         ListItemButton(
             title = stringResource(R.string.lbl_container_2),
-            onClick = { },
+            onClick = { navController.navigate(NavDestination.Container2.route) },
             primaryTrailingText = ""
         )
 
@@ -70,7 +74,7 @@ fun SettingsRoute() {
 
         ListItemButton(
             title = stringResource(R.string.lbl_container_3),
-            onClick = { },
+            onClick = { navController.navigate(NavDestination.Container3.route) },
             primaryTrailingText = ""
         )
 
