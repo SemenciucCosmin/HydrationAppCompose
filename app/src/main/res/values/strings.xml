@@ -18,7 +18,6 @@
     <string name="lbl_settings_route_title">Settings</string>
     <string name="lbl_settings_route_message">These containers will appear on you screen so you can easily tap on them and track your intake.</string>
     <string name="lbl_daily_goal">Daily Goal</string>
-    <string name="lbl_units">Units</string>
     <string name="lbl_containers">Containers</string>
     <string name="lbl_container_1">Container 1</string>
     <string name="lbl_container_2">Container 2</string>
