@@ -30,8 +30,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+getDefaultProguardFile("proguard-android-optimize.txt"),
+"proguard-rules.pro"
             )
         }
     }
@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.navigation.runtime.ktx)
+
+    // ANIMATION
+    implementation(libs.androidx.animation.graphics)
 
     // COMPOSE
     implementation(platform(libs.compose.bom))

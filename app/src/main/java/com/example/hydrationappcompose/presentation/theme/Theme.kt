@@ -9,22 +9,22 @@ import androidx.compose.ui.graphics.Color
 
 private val DarkColorScheme = darkColorScheme(
     primary = Color(0xFF40F589),
-    onPrimary = Color(0xFF000000),
+    onPrimary = Color(0xFF000000), // Button text
 
-    secondaryContainer = Color(0x00000000),
-    onSecondaryContainer = Color(0xFFFFFFFF),
+    secondaryContainer = Color(0x00000000), // Indicator color for bottom navigation item
+    onSecondaryContainer = Color(0xFFFFFFFF), // Bottom navigation item color
 
-    background = Color(0xFF000000),
-    onBackground = Color(0xFF7C7C7C),
+    background = Color(0xFF141414),
+    onBackground = Color(0xFF9E9E9E),
 
-    surface = Color(0xFF101010),
+    surface = Color(0xFF000000),
     onSurface = Color(0xFFFFFFFF),
 
-    onSurfaceVariant = Color(0xFF6C6C6C),
+    onSurfaceVariant = Color(0xFF5E5E5E), // Unselected bottom navigation item, Top bar action item
 
-    surfaceTint = Color(0xFF101010),
+    surfaceTint = Color(0xFF000000), // Bottom navigation tint
 
-    outlineVariant = Color(0xFF3B3B3B),
+    outlineVariant = Color(0xFF9E9E9E), // Horizontal divider
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -34,17 +34,17 @@ private val LightColorScheme = lightColorScheme(
     secondaryContainer = Color(0x00000000),
     onSecondaryContainer = Color(0xFF000000),
 
-    background = Color(0xFFEFEFEF),
-    onBackground = Color(0xFF5E5E5E),
+    background = Color(0xFFEBEBEB),
+    onBackground = Color(0xFF616161),
 
     surface = Color(0xFFFFFFFF),
     onSurface = Color(0xFF000000),
 
-    onSurfaceVariant = Color(0xFFA6A6A6),
+    onSurfaceVariant = Color(0xFFA1A1A1),
 
     surfaceTint = Color(0xFFFFFFFF),
 
-    outlineVariant = Color(0xFFC3C3C3),
+    outlineVariant = Color(0xFF616161),
 )
 
 @Composable

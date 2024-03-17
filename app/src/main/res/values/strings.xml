@@ -1,6 +1,7 @@
 <resources>
     <!--  APP  -->
     <string name="app_name">HydrationApp</string>
+    <string name="lbl_loading">Loading…</string>
 
     <!--  BOTTOM NAVIGATION  -->
     <string name="lbl_today">Today</string>

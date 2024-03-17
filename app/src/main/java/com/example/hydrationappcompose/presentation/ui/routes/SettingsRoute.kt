@@ -20,10 +20,13 @@ import com.example.hydrationappcompose.navigation.LocalNavController
 import com.example.hydrationappcompose.navigation.NavDestination
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 import com.example.hydrationappcompose.presentation.ui.components.ListItemButton
+import com.example.hydrationappcompose.presentation.ui.viewmodel.SettingsViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun SettingsRoute() {
     val navController = LocalNavController.current
+    val settingsViewModel = koinViewModel<SettingsViewModel>()
 
     Column {
         Spacer(modifier = Modifier.height(40.dp))
