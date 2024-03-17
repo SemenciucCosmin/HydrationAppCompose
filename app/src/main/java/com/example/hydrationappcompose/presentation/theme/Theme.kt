@@ -14,15 +14,15 @@ private val DarkColorScheme = darkColorScheme(
     secondaryContainer = Color(0x00000000), // Indicator color for bottom navigation item
     onSecondaryContainer = Color(0xFFFFFFFF), // Bottom navigation item color
 
-    background = Color(0xFF141414),
+    background = Color(0xFF171717),
     onBackground = Color(0xFF9E9E9E),
 
-    surface = Color(0xFF000000),
+    surface = Color(0xFF0F0F0F),
     onSurface = Color(0xFFFFFFFF),
 
     onSurfaceVariant = Color(0xFF5E5E5E), // Unselected bottom navigation item, Top bar action item
 
-    surfaceTint = Color(0xFF000000), // Bottom navigation tint
+    surfaceTint = Color(0xFF0F0F0F), // Bottom navigation tint
 
     outlineVariant = Color(0xFF9E9E9E), // Horizontal divider
 )
@@ -34,15 +34,15 @@ private val LightColorScheme = lightColorScheme(
     secondaryContainer = Color(0x00000000),
     onSecondaryContainer = Color(0xFF000000),
 
-    background = Color(0xFFEBEBEB),
+    background = Color(0xFFE8E8E8),
     onBackground = Color(0xFF616161),
 
-    surface = Color(0xFFFFFFFF),
+    surface = Color(0xFFF0F0F0),
     onSurface = Color(0xFF000000),
 
     onSurfaceVariant = Color(0xFFA1A1A1),
 
-    surfaceTint = Color(0xFFFFFFFF),
+    surfaceTint = Color(0xFFF0F0F0),
 
     outlineVariant = Color(0xFF616161),
 )

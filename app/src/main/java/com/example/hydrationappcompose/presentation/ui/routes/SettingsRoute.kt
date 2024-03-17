@@ -10,12 +10,15 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.hydrationappcompose.R
+import com.example.hydrationappcompose.model.MeasurementUnit
 import com.example.hydrationappcompose.navigation.LocalNavController
 import com.example.hydrationappcompose.navigation.NavDestination
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
@@ -27,6 +30,8 @@ import org.koin.androidx.compose.koinViewModel
 fun SettingsRoute() {
     val navController = LocalNavController.current
     val settingsViewModel = koinViewModel<SettingsViewModel>()
+    val uiState by settingsViewModel.uiState.collectAsStateWithLifecycle()
+    val unit = MeasurementUnit.getById(uiState.unitId)
 
     Column {
         Spacer(modifier = Modifier.height(40.dp))
@@ -36,7 +41,7 @@ fun SettingsRoute() {
         ListItemButton(
             title = stringResource(R.string.lbl_units_route_title),
             onClick = { navController.navigate(NavDestination.Units.route) },
-            primaryTrailingText = ""
+            primaryTrailingText = stringResource(unit.shortStringRes)
         )
 
         HorizontalDivider()
@@ -44,7 +49,8 @@ fun SettingsRoute() {
         ListItemButton(
             title = stringResource(R.string.lbl_daily_goal),
             onClick = { navController.navigate(NavDestination.DailyGoal.route) },
-            primaryTrailingText = ""
+            primaryTrailingText = uiState.dailyGoal.toString(),
+            secondaryTrailingText = stringResource(unit.shortStringRes)
         )
 
         HorizontalDivider()
@@ -62,7 +68,8 @@ fun SettingsRoute() {
         ListItemButton(
             title = stringResource(R.string.lbl_container_1),
             onClick = { navController.navigate(NavDestination.Container1.route) },
-            primaryTrailingText = ""
+            primaryTrailingText = uiState.container1Size.toString(),
+            secondaryTrailingText = stringResource(unit.shortStringRes)
         )
 
         HorizontalDivider()
@@ -70,7 +77,8 @@ fun SettingsRoute() {
         ListItemButton(
             title = stringResource(R.string.lbl_container_2),
             onClick = { navController.navigate(NavDestination.Container2.route) },
-            primaryTrailingText = ""
+            primaryTrailingText = uiState.container2Size.toString(),
+            secondaryTrailingText = stringResource(unit.shortStringRes)
         )
 
         HorizontalDivider()
@@ -78,7 +86,8 @@ fun SettingsRoute() {
         ListItemButton(
             title = stringResource(R.string.lbl_container_3),
             onClick = { navController.navigate(NavDestination.Container3.route) },
-            primaryTrailingText = ""
+            primaryTrailingText = uiState.container3Size.toString(),
+            secondaryTrailingText = stringResource(unit.shortStringRes)
         )
 
         HorizontalDivider()
