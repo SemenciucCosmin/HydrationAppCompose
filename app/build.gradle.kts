@@ -82,6 +82,9 @@ dependencies {
     // NAVIGATION
     implementation(libs.navigation.compose)
 
+    // PREFERENCES
+    implementation(libs.datastore.preferences)
+
     // ROOM
     ksp(libs.room.compiler)
     implementation(libs.room.ktx)
