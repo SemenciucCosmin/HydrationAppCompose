@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.hydrationappcompose.model.Container
+import com.example.hydrationappcompose.domain.model.Container
 import com.example.hydrationappcompose.presentation.ui.routes.ContainerRoute
 import com.example.hydrationappcompose.presentation.ui.routes.HistoryRoute
 import com.example.hydrationappcompose.presentation.ui.routes.SettingsRoute

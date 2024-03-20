@@ -1,4 +1,4 @@
-package com.example.hydrationappcompose.model
+package com.example.hydrationappcompose.domain.model
 
 import androidx.annotation.StringRes
 import com.example.hydrationappcompose.R

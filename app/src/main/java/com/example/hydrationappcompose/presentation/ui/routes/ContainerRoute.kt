@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import com.example.hydrationappcompose.R
-import com.example.hydrationappcompose.model.Container
-import com.example.hydrationappcompose.model.MeasurementUnit
+import com.example.hydrationappcompose.domain.model.Container
+import com.example.hydrationappcompose.domain.model.MeasurementUnit
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 
 private const val BACKGROUND_CONSTRAINT = "background"

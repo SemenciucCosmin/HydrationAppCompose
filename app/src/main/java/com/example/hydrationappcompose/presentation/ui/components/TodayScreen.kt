@@ -19,7 +19,7 @@ import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import com.example.hydrationappcompose.R
-import com.example.hydrationappcompose.model.MeasurementUnit
+import com.example.hydrationappcompose.domain.model.MeasurementUnit
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 import com.example.hydrationappcompose.presentation.ui.viewmodel.model.TodayUiState
 
@@ -37,6 +37,8 @@ fun TodayScreen(
     onContainer2Click: () -> Unit,
     onContainer3Click: () -> Unit
 ) {
+    val unit = MeasurementUnit.getById(uiState.unitId)
+
     ConstraintLayout(
         constraintSet = constraintSet(),
         modifier = Modifier.fillMaxSize()
@@ -55,8 +57,8 @@ fun TodayScreen(
             color = Color.White,
             text = stringResource(
                 R.string.lbl_goal_message_formatted,
-                uiState.intakePercentage,
-                uiState.dailyGoal
+                uiState.dailyGoal,
+                stringResource(unit.shortStringRes),
             ),
             modifier = Modifier
                 .layoutId(GOAL_CONSTRAINT)
@@ -79,7 +81,7 @@ fun TodayScreen(
         )
 
         ContainerButtonsRow(
-            unit = MeasurementUnit.MILLILITERS,
+            unit = unit,
             container1Size = uiState.container1Size,
             container2Size = uiState.container2Size,
             container3Size = uiState.container3Size,

@@ -8,14 +8,12 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.hydrationappcompose.R
-import com.example.hydrationappcompose.model.MeasurementUnit
+import com.example.hydrationappcompose.domain.model.MeasurementUnit
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 import com.example.hydrationappcompose.presentation.ui.viewmodel.UnitsViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -23,10 +21,12 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun UnitsRoute() {
     val unitsViewModel = koinViewModel<UnitsViewModel>()
-    val uiState by unitsViewModel.uiState.collectAsStateWithLifecycle()
-    val (millilitersItemColor, ouncesItemColor) = when (MeasurementUnit.getById(uiState.unitId)) {
-        MeasurementUnit.MILLILITERS -> MaterialTheme.colorScheme.primary to MaterialTheme.colorScheme.onSurface
-        MeasurementUnit.OUNCES -> MaterialTheme.colorScheme.onSurface to MaterialTheme.colorScheme.primary
+    val unit = MeasurementUnit.getById(unitsViewModel.unitId)
+    val selectedUnitColor = MaterialTheme.colorScheme.primary
+    val unselectedUnitColor = MaterialTheme.colorScheme.onSurface
+    val (millilitersItemColor, ouncesItemColor) = when (unit) {
+        MeasurementUnit.MILLILITERS -> selectedUnitColor to unselectedUnitColor
+        MeasurementUnit.OUNCES -> unselectedUnitColor to selectedUnitColor
     }
 
     Column(modifier = Modifier.padding(top = 40.dp)) {

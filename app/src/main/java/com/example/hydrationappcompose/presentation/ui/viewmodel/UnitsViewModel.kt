@@ -1,17 +1,32 @@
 package com.example.hydrationappcompose.presentation.ui.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.hydrationappcompose.presentation.ui.viewmodel.model.UnitsUiState
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
+import androidx.lifecycle.viewModelScope
+import com.example.hydrationappcompose.common.Defaults
+import com.example.hydrationappcompose.data.repository.SettingsRepository
+import com.example.hydrationappcompose.domain.usecase.GetSettingsUseCase
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-class UnitsViewModel : ViewModel() {
-    private val _uiState = MutableStateFlow(UnitsUiState())
-    val uiState: StateFlow<UnitsUiState> = _uiState.asStateFlow()
+class UnitsViewModel(
+    private val settingsRepository: SettingsRepository,
+    private val getSettingsUseCase: GetSettingsUseCase
+) : ViewModel() {
+
+    var unitId by mutableIntStateOf(Defaults.UNIT_ID)
+
+    init {
+        viewModelScope.launch {
+            getSettingsUseCase().collectLatest { settings ->
+                unitId = settings.unitId
+            }
+        }
+    }
 
     fun onSelectUnit(unitId: Int) {
-        _uiState.update { it.copy(unitId = unitId) }
+        viewModelScope.launch { settingsRepository.saveUnitId(unitId) }
     }
 }

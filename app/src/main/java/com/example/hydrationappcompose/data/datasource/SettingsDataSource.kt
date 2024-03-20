@@ -1,4 +1,4 @@
-package com.example.hydrationappcompose.data
+package com.example.hydrationappcompose.data.datasource
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -8,7 +8,7 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.hydrationappcompose.common.Defaults
-import com.example.hydrationappcompose.model.Settings
+import com.example.hydrationappcompose.domain.model.Settings
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -44,22 +44,24 @@ class SettingsDataSource(private val context: Context) {
             )
         }
 
-    suspend fun saveUnit(unitId: Int) = context.dataStore.edit { it[UNIT_KEY] = unitId }
-
-    suspend fun saveDailyGoal(dailyGoal: Int) = context.dataStore.edit { preferences ->
-        preferences[DAILY_GOAL_KEY] = dailyGoal
+    suspend fun saveUnitId(unitId: Int) {
+        context.dataStore.edit { it[UNIT_KEY] = unitId }
     }
 
-    suspend fun saveContainer1Size(size: Int) = context.dataStore.edit { preferences ->
-        preferences[CONTAINER_1_KEY] = size
+    suspend fun saveDailyGoal(dailyGoal: Int) {
+        context.dataStore.edit { preferences -> preferences[DAILY_GOAL_KEY] = dailyGoal }
     }
 
-    suspend fun saveContainer2Size(size: Int) = context.dataStore.edit { preferences ->
-        preferences[CONTAINER_2_KEY] = size
+    suspend fun saveContainer1Size(size: Int) {
+        context.dataStore.edit { preferences -> preferences[CONTAINER_1_KEY] = size }
     }
 
-    suspend fun saveContainer3Size(size: Int) = context.dataStore.edit { preferences ->
-        preferences[CONTAINER_3_KEY] = size
+    suspend fun saveContainer2Size(size: Int) {
+        context.dataStore.edit { preferences -> preferences[CONTAINER_2_KEY] = size }
+    }
+
+    suspend fun saveContainer3Size(size: Int) {
+        context.dataStore.edit { preferences -> preferences[CONTAINER_3_KEY] = size }
     }
 
     companion object {

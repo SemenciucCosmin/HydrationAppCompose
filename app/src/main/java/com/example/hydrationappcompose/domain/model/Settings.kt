@@ -1,4 +1,4 @@
-package com.example.hydrationappcompose.model
+package com.example.hydrationappcompose.domain.model
 
 data class Settings(
     val unitId: Int,
