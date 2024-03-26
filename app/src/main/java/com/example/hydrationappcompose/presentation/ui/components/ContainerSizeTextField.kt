@@ -30,6 +30,7 @@ import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 fun ContainerSizeTextField(
     value: String,
     isError: Boolean,
+    isInputValid: Boolean,
     onValueChanged: (String) -> Unit,
     onDone: () -> Unit
 ) {
@@ -41,7 +42,7 @@ fun ContainerSizeTextField(
         value = value,
         onValueChange = onValueChanged,
         textStyle = MaterialTheme.typography.bodyLarge.copy(textAlign = TextAlign.Center),
-        isError = isError,
+        isError = isError || !isInputValid,
         singleLine = true,
         shape = MaterialTheme.shapes.medium,
         keyboardActions = KeyboardActions(
@@ -56,8 +57,9 @@ fun ContainerSizeTextField(
             imeAction = ImeAction.Done
         ),
         supportingText = {
-            if (isError) {
-                Text(text = stringResource(R.string.lbl_container_text_field_error_message))
+            when {
+                isError -> Text(text = stringResource(R.string.lbl_wrong_input))
+                !isInputValid -> Text(text = stringResource(R.string.lbl_size_too_large))
             }
         },
         colors = OutlinedTextFieldDefaults.colors(
@@ -82,6 +84,7 @@ private fun ContainerSizeTextFieldPreview() {
         ContainerSizeTextField(
             value = Defaults.CONTAINER_1_SIZE.toString(),
             isError = false,
+            isInputValid = true,
             onValueChanged = { },
             onDone = { }
         )
@@ -95,6 +98,7 @@ private fun ContainerSizeTextFieldErrorPreview() {
         ContainerSizeTextField(
             value = Defaults.CONTAINER_1_SIZE.toString(),
             isError = true,
+            isInputValid = false,
             onValueChanged = { },
             onDone = { }
         )

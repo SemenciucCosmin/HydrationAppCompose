@@ -8,4 +8,5 @@ data object Defaults {
     const val CONTAINER_1_SIZE = 100f
     const val CONTAINER_2_SIZE = 250f
     const val CONTAINER_3_SIZE = 750f
+    const val MAXIMUM_SIZE = 10000f
 }

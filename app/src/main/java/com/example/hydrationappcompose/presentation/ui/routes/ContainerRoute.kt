@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.hydrationappcompose.R
+import com.example.hydrationappcompose.common.Defaults
 import com.example.hydrationappcompose.domain.model.Container
 import com.example.hydrationappcompose.domain.model.MeasurementUnit
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
@@ -45,7 +46,8 @@ fun ContainerRoute(container: Container) {
             }
         )
     }
-    val isError = containerSize.toFloatOrNull() == null && containerSize.isNotBlank()
+    val isError = containerSize.toFloatOrNull() == null || containerSize.isEmpty()
+    val isInputValid = containerSize.toFloatOrNull()?.let { it <= Defaults.MAXIMUM_SIZE } ?: false
 
     Box {
         Image(
@@ -72,9 +74,10 @@ fun ContainerRoute(container: Container) {
             ContainerSizeTextField(
                 value = containerSize,
                 isError = isError,
+                isInputValid = isInputValid,
                 onValueChanged = { containerSize = it },
                 onDone = {
-                    if (!isError) {
+                    if (!isError && isInputValid) {
                         containerViewModel.saveContainerSize(containerSize.toFloat(), container)
                     }
                 }
