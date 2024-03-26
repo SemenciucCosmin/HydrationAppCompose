@@ -13,15 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.hydrationappcompose.common.Defaults
 import com.example.hydrationappcompose.domain.model.MeasurementUnit
 import com.example.hydrationappcompose.presentation.theme.HydrationAppTheme
 
 @Composable
 fun ContainerButtonsRow(
     unit: MeasurementUnit,
-    container1Size: Int,
-    container2Size: Int,
-    container3Size: Int,
+    container1Size: Float,
+    container2Size: Float,
+    container3Size: Float,
     onContainer1Click: () -> Unit,
     onContainer2Click: () -> Unit,
     onContainer3Click: () -> Unit,
@@ -61,9 +62,9 @@ private fun ContainerButtonsRowPreview() {
     HydrationAppTheme {
         ContainerButtonsRow(
             unit = MeasurementUnit.MILLILITERS,
-            container1Size = 100,
-            container2Size = 250,
-            container3Size = 750,
+            container1Size = Defaults.CONTAINER_1_SIZE,
+            container2Size = Defaults.CONTAINER_2_SIZE,
+            container3Size = Defaults.CONTAINER_3_SIZE,
             onContainer1Click = { },
             onContainer2Click = { },
             onContainer3Click = { }

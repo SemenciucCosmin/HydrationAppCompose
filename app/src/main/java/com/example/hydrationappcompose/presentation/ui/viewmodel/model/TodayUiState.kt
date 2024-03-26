@@ -1,12 +1,14 @@
 package com.example.hydrationappcompose.presentation.ui.viewmodel.model
 
+import com.example.hydrationappcompose.common.Defaults
+
 data class TodayUiState(
-    val intake: Int = 0,
-    val intakePercentage: Int = 0,
-    val unitId: Int = 0,
-    val dailyGoal: Int = 2000,
-    val container1Size: Int = 100,
-    val container2Size: Int = 250,
-    val container3Size: Int = 750,
+    val intake: Float = Defaults.INTAKE,
+    val intakePercentage: Float = Defaults.INTAKE_PERCENTAGE,
+    val unitId: Int = Defaults.UNIT_ID,
+    val dailyGoal: Float = Defaults.DAILY_GOAL,
+    val container1Size: Float = Defaults.CONTAINER_1_SIZE,
+    val container2Size: Float = Defaults.CONTAINER_2_SIZE,
+    val container3Size: Float = Defaults.CONTAINER_3_SIZE,
     val isLoading: Boolean = true
 )

@@ -3,6 +3,7 @@ package com.example.hydrationappcompose.di
 import com.example.hydrationappcompose.data.repository.SettingsRepository
 import com.example.hydrationappcompose.data.repository.SettingsRepositoryImpl
 import com.example.hydrationappcompose.domain.usecase.GetSettingsUseCase
+import com.example.hydrationappcompose.presentation.ui.viewmodel.ContainerViewModel
 import com.example.hydrationappcompose.presentation.ui.viewmodel.HistoryViewModel
 import com.example.hydrationappcompose.presentation.ui.viewmodel.SettingsViewModel
 import com.example.hydrationappcompose.presentation.ui.viewmodel.TodayViewModel
@@ -16,6 +17,7 @@ val appModule = module {
     viewModelOf(::HistoryViewModel)
     viewModelOf(::SettingsViewModel)
     viewModelOf(::UnitsViewModel)
+    viewModelOf(::ContainerViewModel)
     factoryOf(::GetSettingsUseCase)
     factory<SettingsRepository> { SettingsRepositoryImpl(get()) }
 }

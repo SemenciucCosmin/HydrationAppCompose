@@ -17,6 +17,7 @@ class UnitsViewModel(
 ) : ViewModel() {
 
     var unitId by mutableIntStateOf(Defaults.UNIT_ID)
+        private set
 
     init {
         viewModelScope.launch {
@@ -26,7 +27,7 @@ class UnitsViewModel(
         }
     }
 
-    fun onSelectUnit(unitId: Int) {
+    fun selectUnit(unitId: Int) {
         viewModelScope.launch { settingsRepository.saveUnitId(unitId) }
     }
 }

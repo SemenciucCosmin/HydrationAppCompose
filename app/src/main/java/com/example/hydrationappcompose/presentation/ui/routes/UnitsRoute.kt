@@ -32,7 +32,7 @@ fun UnitsRoute() {
     Column(modifier = Modifier.padding(top = 40.dp)) {
         ListItem(
             modifier = Modifier.clickable {
-                unitsViewModel.onSelectUnit(MeasurementUnit.MILLILITERS.id)
+                unitsViewModel.selectUnit(MeasurementUnit.MILLILITERS.id)
             },
             headlineContent = {
                 Text(
@@ -44,7 +44,7 @@ fun UnitsRoute() {
 
         ListItem(
             modifier = Modifier.clickable {
-                unitsViewModel.onSelectUnit(MeasurementUnit.OUNCES.id)
+                unitsViewModel.selectUnit(MeasurementUnit.OUNCES.id)
             },
             headlineContent = {
                 Text(

@@ -39,5 +39,6 @@
     <!--  CONTAINER ROUTE  -->
     <string name="lbl_daily_goal_route_message">Here you can set your hydration goal based on your preferred unit of measurement.</string>
     <string name="lbl_container_route_message">Here you can specify your container size so it would be easier to enter your daily liquid intake.</string>
+    <string name="lbl_container_text_field_error_message">Wrong input!</string>
 
 </resources>

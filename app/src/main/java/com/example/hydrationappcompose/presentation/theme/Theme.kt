@@ -25,6 +25,8 @@ private val DarkColorScheme = darkColorScheme(
     surfaceTint = Color(0xFF0F0F0F), // Bottom navigation tint
 
     outlineVariant = Color(0xFF9E9E9E), // Horizontal divider
+
+    error = Color(0xFFF54040)
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -45,6 +47,8 @@ private val LightColorScheme = lightColorScheme(
     surfaceTint = Color(0xFFF0F0F0),
 
     outlineVariant = Color(0xFF616161),
+
+    error = Color(0xFFB10000)
 )
 
 @Composable
